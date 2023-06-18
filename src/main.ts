@@ -9,18 +9,27 @@ const ctx = canvas.getContext("2d")!;
 
 
 
-// 节点
-ctx.fillStyle = '#ccc'
-ctx.shadowColor = 'red'
-ctx.shadowOffsetY = 10
-ctx.shadowBlur = 10
-ctx.beginPath()
-ctx.arc(200, 200, 100, 0, 6.3)
+
+
+// shadow 椭圆
+
+ctx.shadowColor = '#ddd'
+ctx.shadowOffsetY = -200
+ctx.shadowBlur = 30
+ctx.moveTo(300, 500)
+ctx.ellipse(200, 500, 50, 20, 0, 0, Math.PI * 2)
 ctx.fill()
+
 
 // reset
 ctx.shadowOffsetY = 0
 ctx.shadowBlur = 0
+
+// 节点
+ctx.fillStyle = '#ccc'
+ctx.beginPath()
+ctx.arc(200, 200, 100, 0, 6.3)
+ctx.fill()
 
 // icon
 const img = new Image()
