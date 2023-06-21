@@ -2,10 +2,9 @@
 
 const canvas = document.getElementById("canvas")! as HTMLCanvasElement;
 const ctx = canvas.getContext("2d")!;
+const ratio = window.devicePixelRatio || 1;
+ctx.scale(ratio, ratio)
 
-// setTimeout(() => {
-//         window.requestAnimationFrame(clock);
-// }, 0);
 
 
 
@@ -13,11 +12,11 @@ const ctx = canvas.getContext("2d")!;
 
 // shadow 椭圆
 
-ctx.shadowColor = '#ddd'
-ctx.shadowOffsetY = -200
-ctx.shadowBlur = 30
-ctx.moveTo(300, 500)
-ctx.ellipse(200, 500, 50, 20, 0, 0, Math.PI * 2)
+ctx.shadowColor = '#ccc'
+ctx.shadowOffsetY = -450
+ctx.shadowBlur = 40
+ctx.moveTo(300, 300)
+ctx.ellipse(200, 500, 40, 10, 0, 0, Math.PI * 2)
 ctx.fill()
 
 
@@ -26,18 +25,20 @@ ctx.shadowOffsetY = 0
 ctx.shadowBlur = 0
 
 // 节点
-ctx.fillStyle = '#ccc'
+ctx.fillStyle = '#dcdcdc'
 ctx.beginPath()
-ctx.arc(200, 200, 100, 0, 6.3)
+ctx.arc(200, 200, 60, 0, 6.3)
 ctx.fill()
 
 // icon
 const img = new Image()
+img.height = 64
+img.width = 64
 img.src = '/plus.png'
 
 img.onload = function () {
         const offset = 64 / 2
-        ctx.drawImage(img, 200 - offset, 200 - offset)
+        ctx.drawImage(img, 200 - offset, 200 - offset, 64, 64)
         // ctx.beginPath()
         // ctx.moveTo(200, 600)
         // const ptrn = ctx.createPattern(img, 'no-repeat')
@@ -59,13 +60,13 @@ ctx.fillText('Get an Organization', 200, 370)
 ctx.lineWidth = 20
 ctx.lineCap = 'round'
 ctx.setLineDash([0, 40])
-const lineargradient = ctx.createLinearGradient(30, 400, 470, 200)
+const lineargradient = ctx.createLinearGradient(30, 700, 470, 700)
 lineargradient.addColorStop(0, 'red')
 lineargradient.addColorStop(1, 'blue')
 ctx.strokeStyle = lineargradient 
 ctx.beginPath()
-ctx.moveTo(30, 400)
-ctx.lineTo(470, 400)
+ctx.moveTo(30, 700)
+ctx.lineTo(470, 700)
 ctx.stroke()
 
 
