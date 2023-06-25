@@ -1,3 +1,4 @@
+export * from './util'
 /**
  * 业务流程图
  */
