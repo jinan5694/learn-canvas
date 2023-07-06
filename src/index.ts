@@ -1,8 +1,8 @@
-export * from './util'
 /**
  * 业务流程图
  */
 
+export * from './diagram'
 export class FlowGraph {
   private container: HTMLElement
   private width: number

@@ -13,3 +13,15 @@ https://juejin.cn/post/6996811170459942925
 ## diagram
 
 https://elt.rti.org.tw/q-and-a/table-diagram-graph-and-chart/
+
+## 目标
+
+画出一个可拖拽改变位置的业务流程图
+
+- 配置固定节点
+- 手动添加节点
+
+# 目录结构
+
+- src 为源代码
+- main 为 demo 入口文件
